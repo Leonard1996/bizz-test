@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: always
+    ports:
+      - '6379:6379'
+
+  app:
+    build: .
+    container_name: node_app
+    depends_on:
+      - mysql
+      - redis
+    env_file:
+      - .env
+    ports:
+      - '4500:4500'
+    volumes:
+      - .:/app:cached # better performance on Mac
+      - /app/node_modules
+    working_dir: /app
+    command: >
+      sh -c "
+        echo 'Waiting for MySQL...'; 
+        until nc -z mysql 3306; do sleep 2; done;
+        echo 'MySQL is ready.';
+
+        echo 'Waiting for Redis...'; 
+        until nc -z redis 6379; do sleep 2; done;
+        echo 'Redis is ready.';
+
+        echo 'Running DB migrations...';
+        npm run migration:run;
+
+        echo 'Starting app with PM2...';
+        pm2-runtime dist/app.js -i max --env production
+      "
+
+volumes:
+  mysql_data:

@@ -1,0 +1,392 @@
+{
+  "info": {
+    "_postman_id": "dca379b8-325d-4d31-8106-b4bb12d819e8",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6902836"
+  },
+  "item": [
+    {
+      "name": "get third party trips",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODA4OGVkM2M3ZDZlNjJhYzFmOTUxZCIsImZuYSI6IktpbSIsImxuYSI6IkNsb3NpbmciLCJ1c3IiOiJjbG9zaW5nIiwiZnRsIjpmYWxzZSwiZW1sIjoiY2xvc2luZ0B2aWthcnRlY2guY29tIiwicm9sZSI6WyJjbG9zaW5nIl0sImdyb3Vwc0lkcyI6W10sImYyYSI6ZmFsc2UsImYyYXQiOmZhbHNlLCJpYXQiOjE3MDk4MTMxMDksImV4cCI6MTcwOTg0MTkwOSwiYXVkIjoiVmlrYXIgQXBwIFVzZXJzIiwiaXNzIjoiVmlrYXIgVGVjaG5vbG9naWVzIiwic3ViIjoiY2xvc2luZ0B2aWthcnRlY2guY29tIn0.Ft8Wb2B6qhpa6iKeoGnzUoEdE86hK0o_mQLv5ozuB3g"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Cookie",
+            "value": "connect.sid=s%3AJaYWtkt3HyN8wMvPHGKTj92gzZ4LF7SN.cTlzq%2F6UEMGM41vgJZ0hNzY9V4urhMHbwIFuZEE%2FA2M"
+          },
+          {
+            "key": "If-None-Match",
+            "value": "W/\"1b413-GfOVdfuSwBfNYVX/WqfrVERq5rw\""
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:4500/api/trips/search/?origin=JFK&destination=FRA&sort_by=cheapest",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4500",
+          "path": ["api", "trips", "search", ""],
+          "query": [
+            {
+              "key": "origin",
+              "value": "JFK"
+            },
+            {
+              "key": "destination",
+              "value": "FRA"
+            },
+            {
+              "key": "sort_by",
+              "value": "cheapest"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create trip",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"origin\": \"SYD\",\n    \"destination\": \"GRU\",\n    \"cost\": 625,\n    \"duration\": 5,\n    \"type\": \"flight\",\n    \"display_name\": \"from SYD to GRU by flight\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4500/api/trips",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4500",
+          "path": ["api", "trips"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete trip",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Cookie",
+            "value": "connect.sid=s%3AqeNvsVHMrOrMaBlYt58fN52cwXTBpC37.LZ%2BiicG6a8I6hJQGqpQ0c1E721J4hBEP%2BDB8SteiVgM"
+          },
+          {
+            "key": "If-None-Match",
+            "value": "W/\"319-j/1qq+SQw/95WFZzp0J2/WuSa40\""
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "document"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "navigate"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "Sec-Fetch-User",
+            "value": "?1"
+          },
+          {
+            "key": "Upgrade-Insecure-Requests",
+            "value": "1"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Access-Control-Request-Headers",
+            "value": "authorization,cache-control,content-type,pragma"
+          },
+          {
+            "key": "Access-Control-Request-Method",
+            "value": "GET"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODA4OGVkM2M3ZDZlNjJhYzFmOTUxZCIsImZuYSI6IktpbSIsImxuYSI6IkNsb3NpbmciLCJ1c3IiOiJjbG9zaW5nIiwiZnRsIjpmYWxzZSwiZW1sIjoiY2xvc2luZ0B2aWthcnRlY2guY29tIiwicm9sZSI6WyJjbG9zaW5nIl0sImdyb3Vwc0lkcyI6W10sImYyYSI6ZmFsc2UsImYyYXQiOmZhbHNlLCJpYXQiOjE3MTUyNDk4MTAsImV4cCI6MTcxNTI3ODYxMCwiYXVkIjoiVmlrYXIgQXBwIFVzZXJzIiwiaXNzIjoiVmlrYXIgVGVjaG5vbG9naWVzIiwic3ViIjoiY2xvc2luZ0B2aWthcnRlY2guY29tIn0.FQn4qx9S0GmspKE8T-u10jrHhkvtyfafNgwa6_si43A"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "Sec-WebSocket-Key",
+            "value": "q7TBfo1ok6h5CQYUNv8uSA=="
+          },
+          {
+            "key": "Upgrade",
+            "value": "websocket"
+          },
+          {
+            "key": "Sec-WebSocket-Version",
+            "value": "13"
+          },
+          {
+            "key": "Sec-WebSocket-Extensions",
+            "value": "permessage-deflate; client_max_window_bits"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"issuedAt\":1715250645959,\"isExpired\":false,\"expires\":1715251545959,\"userDetails\":{\"email\":\"closing@vikartech.com\",\"firstName\":\"Kim\",\"firstTimeLogin\":false,\"id\":\"658088ed3c7d6e62ac1f951d\",\"lastName\":\"Closing\",\"roles\":[\"closing\"],\"groupsIds\":[],\"username\":\"closing\",\"acceptedTerms\":false}}"
+        },
+        "url": {
+          "raw": "http://localhost:4500/api/trips/5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4500",
+          "path": ["api", "trips", "5"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "list trips",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Cookie",
+            "value": "connect.sid=s%3AqeNvsVHMrOrMaBlYt58fN52cwXTBpC37.LZ%2BiicG6a8I6hJQGqpQ0c1E721J4hBEP%2BDB8SteiVgM"
+          },
+          {
+            "key": "If-None-Match",
+            "value": "W/\"319-j/1qq+SQw/95WFZzp0J2/WuSa40\""
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "document"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "navigate"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "Sec-Fetch-User",
+            "value": "?1"
+          },
+          {
+            "key": "Upgrade-Insecure-Requests",
+            "value": "1"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Access-Control-Request-Headers",
+            "value": "authorization,cache-control,content-type,pragma"
+          },
+          {
+            "key": "Access-Control-Request-Method",
+            "value": "GET"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ODA4OGVkM2M3ZDZlNjJhYzFmOTUxZCIsImZuYSI6IktpbSIsImxuYSI6IkNsb3NpbmciLCJ1c3IiOiJjbG9zaW5nIiwiZnRsIjpmYWxzZSwiZW1sIjoiY2xvc2luZ0B2aWthcnRlY2guY29tIiwicm9sZSI6WyJjbG9zaW5nIl0sImdyb3Vwc0lkcyI6W10sImYyYSI6ZmFsc2UsImYyYXQiOmZhbHNlLCJpYXQiOjE3MTUyNDk4MTAsImV4cCI6MTcxNTI3ODYxMCwiYXVkIjoiVmlrYXIgQXBwIFVzZXJzIiwiaXNzIjoiVmlrYXIgVGVjaG5vbG9naWVzIiwic3ViIjoiY2xvc2luZ0B2aWthcnRlY2guY29tIn0.FQn4qx9S0GmspKE8T-u10jrHhkvtyfafNgwa6_si43A"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "Sec-WebSocket-Key",
+            "value": "q7TBfo1ok6h5CQYUNv8uSA=="
+          },
+          {
+            "key": "Upgrade",
+            "value": "websocket"
+          },
+          {
+            "key": "Sec-WebSocket-Version",
+            "value": "13"
+          },
+          {
+            "key": "Sec-WebSocket-Extensions",
+            "value": "permessage-deflate; client_max_window_bits"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"issuedAt\":1715250645959,\"isExpired\":false,\"expires\":1715251545959,\"userDetails\":{\"email\":\"closing@vikartech.com\",\"firstName\":\"Kim\",\"firstTimeLogin\":false,\"id\":\"658088ed3c7d6e62ac1f951d\",\"lastName\":\"Closing\",\"roles\":[\"closing\"],\"groupsIds\":[],\"username\":\"closing\",\"acceptedTerms\":false}}"
+        },
+        "url": {
+          "raw": "http://localhost:4500/api/trips",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4500",
+          "path": ["api", "trips"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
