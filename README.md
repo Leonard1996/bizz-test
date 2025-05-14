@@ -10,7 +10,7 @@ Core tech stack is NodeJs, Express, Typescript, TypeOrm, MySql, Redis, Docker, P
 
 There are 4 APIs as required, they are briefly explained in this readme file but you can also upload postman.json in postman, the file is located in the root directory of the project
 
-Entry point is app.ts and the request then jumps through controllers(there is no routing file), middlewares and then services. The enities folder keeps the TS Class equivalent of the DB tables, which are kept in sync by the files in the migration directory. Common folder includes a couple of types and constants that are for general use through the whole project
+Entry point is app.ts and the request then jumps through controllers(there is no routing file), middlewares and then services. The entities folder keeps the TS Class equivalent of the DB tables, which are kept in sync by the files in the migration directory. Common folder includes a couple of types and constants that are for general use through the whole project
 
 Error Handling is done by a global middleware in the middlewares folder, which handles http errors such as 404 and such, for errors that the developer might need to throw. ex( Database conflict duplicate key), the CustomError.ts file has a an error extension which can be thrown with custom message and code and finally everything else that is not accounted for is simply thrown as a 500 error to the client. I chose this over try catch as I think it is a nice minimal solution for this kind of app, if you want super fined grained controler over errors, maybe try catch would be more suitable
 
