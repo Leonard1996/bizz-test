@@ -22,7 +22,7 @@ Final Notes
 I thought about enhacing the APIs a bit with rate limiting, but then again I think I have added enough features on top of basic requirments and do not want to go beyond the scope of a "test application".
 Also I did not test the /trips/search api as it would need a lot of mocking boilerplate code.
 
-**GET** `/trips/search`  
+**GET** `/api/trips/search`  
 Retrieves trips from third-party providers based on search criteria.
 
 #### Query Parameters
@@ -33,7 +33,7 @@ Retrieves trips from third-party providers based on search criteria.
 | `destination` | string | Yes      | IATA code of the destination airport   |
 | `sort_by`     | string | No       | Sorting method (`cheapest`, `fastest`) |
 
-**POST** `/trips`  
+**POST** `/api/trips`  
 Creates a new trip.
 
 #### Request Body (JSON)
@@ -59,7 +59,7 @@ Deletes a specific trip by its ID.
 | --------- | ------ | ------------------------ |
 | tripId    | string | ID of the trip to delete |
 
-**GET** `/trips`
+**GET** `/api/trips`
 
 Fetches a list of trips with pagination
 
