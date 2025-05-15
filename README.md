@@ -59,7 +59,7 @@ Deletes a specific trip by its ID.
 | --------- | ------ | ------------------------ |
 | tripId    | string | ID of the trip to delete |
 
-**GET** `/api/trips`
+**GET** `/  api/trips`
 
 Fetches a list of trips with pagination
 
@@ -68,4 +68,4 @@ Fetches a list of trips with pagination
 | Parameter | Type   | Description               |
 | --------- | ------ | ------------------------- |
 | limit     | number | Number of trips to return |
-| offset    | number | Number of trips to skip   |
+| page      | number | Page number               |
